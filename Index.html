@@ -30,17 +30,14 @@ body{
   transform:scale(1.05);
 }
 
-/* Romantic Text with typing effect */
+/* Romantic Text with typing + gradient */
 .wish{
   position:absolute;
   bottom:50px;
   width:100%;
   text-align:center;
   font-size:28px;
-  color:white;
-  text-shadow:0 0 5px pink,0 0 10px red;
   font-weight:bold;
-  letter-spacing:1px;
 }
 .gradient{
   background: linear-gradient(90deg, #ff5f6d, #ffc371, #ff5f6d);
@@ -157,7 +154,7 @@ body{
 </audio>
 
 <script>
-// Slideshow + Romantic Text with Typing
+// Slideshow + Romantic Text Typing
 let slides=document.querySelectorAll(".slideshow img");
 let current=0;
 let texts=[
@@ -178,6 +175,7 @@ function typeText(text,index=0){
     setTimeout(()=>typeText(text,index+1),50);
   }
 }
+
 function showSlides(){
   slides.forEach(s=>s.classList.remove("active"));
   slides[current].classList.add("active");
@@ -185,7 +183,7 @@ function showSlides(){
   // Typing effect
   typeText(texts[textIndex]);
 
-  // Confetti + Fireworks + cake sparkle
+  // Confetti + Fireworks
   for(let i=0;i<30;i++){
     let conf=document.createElement("div");
     conf.classList.add("confetti");
